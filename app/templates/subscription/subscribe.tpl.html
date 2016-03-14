@@ -1,0 +1,53 @@
+<div class="container subscribe-form">
+	<div class="row">
+        <div class="col-md-12">
+    		<div class="sub-form well center text-center">
+                <h2>Newsletter</h2>
+
+                <p>Subscribe to our weekly Newsletter and stay tuned.</p>
+                <form class="form-horizontal" name='frmSubscribe' role="form" ng-submit="subscribeCtrl.submitForm()" novalidate>
+            <div class="form-group">
+                <label for="firstName" class="control-label sr-only">First Name</label>
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="input-group" ng-class="{ 'has-error' : frmSubscribe.firstName.$invalid && !frmSubscribe.firstName.$pristine }">
+                        <input type="text" class="form-control" name='firstName' placeholder="First Name" id="subscribe__firstName" ng-model="subscribeCtrl.firstName" ng-minlength='4' ng-maxlength='30' required>
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    </div>
+                    <div style="color:maroon" ng-hide="frmSubscribe.firstName.$pristine" ng-messages="frmSubscribe.firstName.$error">
+                        <div ng-message="required">Field is required</div>
+                        <div ng-message="minlength">Too short</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName" class="control-label sr-only">Last Name</label>
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="input-group" ng-class="{ 'has-error' : frmSubscribe.lastName.$invalid && !frmSubscribe.lastName.$pristine }">
+                        <input type="text" class="form-control" name='lastName' placeholder="Last Name" id="subscribe__lastName" ng-model="subscribeCtrl.lastName" ng-minlength='4' ng-maxlength='30' required>
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    </div>
+                    <div style="color:maroon" ng-hide="frmSubscribe.lastName.$pristine" ng-messages="frmSubscribe.lastName.$error">
+                        <div ng-message="required">Field is required</div>
+                        <div ng-message="minlength">Too short</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label sr-only" >Email</label>
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="input-group" ng-class="{ 'has-error' : frmSubscribe.email.$invalid && !frmSubscribe.email.$pristine }">
+                        <input type="email" class="form-control" name='email' id="subscribe__email" placeholder="Email" ng-pattern='/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/' ng-model='subscribeCtrl.email' required>
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    </div>
+                    <div style="color:maroon" ng-hide="frmSubscribe.email.$pristine" ng-messages="frmSubscribe.email.$error">
+                        <div ng-message="required">Field is required</div>
+                        <div ng-message="pattern">Enter a valid email address</div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info btn-lg" ng-disabled="frmSubscribe.$invalid">Subscribe</button>
+        </form>
+            </div>
+        </div>
+	</div>
+</div>

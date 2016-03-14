@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="mailchimpApp">
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <base href="/" />
+        <title>Mailchimp Subscription</title>
+        <!-- styles -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <!-- Angular dependencies -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <!-- Application Angular modules -->
+        <script src="js/mailchimpApp.js"></script>
+        <script src="js/mailchimpApp.routes.js"></script>
+        <script src="js/mailchimpApp.config.js"></script>
+        <script src="js/layout/layout.module.js"></script>
+        <script src="js/layout/controllers/header.controller.js"></script>
+        <script src="js/subscription/subscription.module.js"></script>
+        <script src="js/subscription/controllers/subscription.controller.js"></script>
+        <script src="js/subscription/services/subscription.service.js"></script>
+    </head>
+    <body>
+        <!-- NAVIGATION -->
+        <div ui-view="sidebar"></div>
+
+        <!-- MAIN CONTENT -->
+        <div ui-view="content" class="page-header"></div>
+    </body>
+</html>
