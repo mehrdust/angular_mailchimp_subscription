@@ -3,32 +3,17 @@
 	angular.module('mailchimpApp.subscription.controllers')
 		.controller('SubscriptionController', SubscriptionController);
 
-		SubscriptionController.$inject = ['Subscription', 'baseConfig'];
+		SubscriptionController.$inject = [];
 
-		function SubscriptionController(Subscription, baseConfig) {
+		function SubscriptionController() {
 			var vm = this;
 
-			// Model
-			vm.firstName = '';
-			vm.lastName = '';
-			vm.email = '';
-			vm.submitResult = {};
-			// vm.submitResult.failed = false;
 
-			vm.subscribed = false;
+			vm.formSubmitted = false;
 			vm.submitForm = submitForm;
 
 			function submitForm() {
-				Subscription.mailchimpSubscribe(vm.firstName, vm.lastName, vm.email)
-					.success(function(data) {
-		      			vm.submitResult.failed = false;
-		      			vm.subscribed = true;
-			    	})
-		      		.error(function(data) {
-		      			vm.submitResult.failed = true;
-		      			vm.submitResult.error = data.error;
-			      	}
-		      	);
+				console.log('test');
 			}
 		}
 })();
