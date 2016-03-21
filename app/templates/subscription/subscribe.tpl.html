@@ -15,8 +15,7 @@
                 <p>Subscribe to our weekly Newsletter and stay tuned.</p>
                 <div class="alert alert-danger col-sm-6 col-sm-offset-3" ng-if="subscribeCtrl.submitResult.failed" role="alert">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                    <span class="sr-only">Error:</span>
-                    Enter a valid email address
+                    {{subscribeCtrl.submitResult.error}}
                 </div>
                 <form class="form-horizontal" name='frmSubscribe' role="form" ng-submit="subscribeCtrl.submitForm()" novalidate>
             <div class="form-group">
